@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="season">
+        <select name="season" id="season"  onchange="window.location.href=this.value">
+            <option value="">--Choose a season</option>
+            <% for (response of responsesYear){%>
+                <option value="<%=response.year%>"><%=response.year%></option>
+                 <% } %>  
+                        
+        </select>
+
+    </form>
+
+
+
+            <table>
+                <thead>
+                    <tr>
+                        Classement saison <%= year %>-<%= parseInt(year)+1 %> 
+                    </tr>
+                </thead>
+            <tbody>
+                    
+            <% for (response of responses){%>
+                <tr>
+                    <td><%=response.stats[8].value%></td><td><img src="<%= response.team.logos[0].href %>"  width="40em" height="40em" alt="logo<%= response.team.name%>"></td><td> <%= response.team.name %> </td> <td> : <%= response.stats[6].value %> pts </td> 
+                </tr>
+                 <% } %>  
+            </tbody>
+            </table>           
+
+</body>
+</html>

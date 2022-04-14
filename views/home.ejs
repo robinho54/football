@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="season">
+        <select name="season" id="season"  onchange="window.location.href=this.value">
+            <option value="">--Choose a season</option>
+            <% for (response of responses){%>
+                <option value="<%=response.year%>"><%=response.year%></option>
+                 <% } %>  
+                        
+        </select>
+
+    </form>
+</body>
+</html>
+
